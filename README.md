@@ -23,5 +23,35 @@ Una aplicación web desarrollada con Laravel que permite explorar y gestionar pe
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/rick-and-morty-explorer.git
-   cd rick-and-morty-explorer
+   git clone https://github.com/TheOliver413/rick-and-morty
+   cd rick-and-morty
+
+## 🚀 Base de Datos
+CREATE DATABASE rick_and_morty;
+
+\q
+
+Edita el archivo `.env` para usar PostgreSQL:
+
+DB_CONNECTION=pgsql
+DB_HOST=localhost
+DB_PORT=5432
+DB_DATABASE=rick_and_morty
+DB_USERNAME=postgres
+DB_PASSWORD=admin
+
+### 5. Configurar sesiones
+
+Este proyecto utiliza sesiones basadas en base de datos. Genera la migración para la tabla de sesiones:
+
+php artisan session:table
+
+### 6. Ejecutar migraciones
+php artisan migrate
+
+### 7. Compilar assets (opcional)
+npm install
+npm run dev
+
+### 8. Iniciar el servidor de desarrollo
+php artisan serve
